@@ -1,4 +1,4 @@
-package com.ziv.netplayer.activity;
+package com.ziv.netplayer.home;
 
 import com.ziv.netplayer.BasePresenter;
 import com.ziv.netplayer.BaseView;

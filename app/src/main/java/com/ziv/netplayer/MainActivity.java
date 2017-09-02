@@ -1,4 +1,4 @@
-package com.ziv.netplayer.activity;
+package com.ziv.netplayer;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
