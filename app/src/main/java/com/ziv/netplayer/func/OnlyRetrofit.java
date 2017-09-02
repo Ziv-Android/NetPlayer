@@ -1,5 +1,7 @@
 package com.ziv.netplayer.func;
 
+import android.util.Log;
+
 import com.ziv.netplayer.bean.MovieEntity;
 import com.ziv.netplayer.service.MovieService;
 
@@ -30,13 +32,16 @@ public class OnlyRetrofit implements Common {
             @Override
             public void onResponse(Call<MovieEntity> call, Response<MovieEntity> response) {
                 result =  response.body().toString();
+                Log.d("Ziv", "OnlyRetrofit onResponse = " + result);
             }
 
             @Override
             public void onFailure(Call<MovieEntity> call, Throwable t) {
                 result = t.getMessage();
+                Log.e("Ziv", "OnlyRetrofit onFailure = " + result);
             }
         });
+        Log.d("Ziv", "OnlyRetrofit MovieInfo = " + result);
         return result;
     }
 }
