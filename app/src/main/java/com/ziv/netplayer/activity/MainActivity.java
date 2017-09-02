@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.click_me_btn)
     Button clickMeBtn;
-    @BindView(R.id.result_tv)
+    @BindView(R.id.result_tv_1)
     TextView resultTv;
 
     @Override
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         Log.e("ButterKnife", "onClick");
         // 网络请求数据
         Common common = new OnlyRetrofit();
-        resultTv.setText(common.getMovieInfo());
+        String movieInfo = common.getMovieInfo();
+        Log.d("Ziv", "MainActivity onClick MovieInfo = " + movieInfo);
+        resultTv.setText(movieInfo);
     }
 }
