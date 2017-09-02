@@ -7,7 +7,7 @@ package com.ziv.netplayer.data;
 public interface MovieDataSource {
     void getMovieList();
 
-    void getMovieInfo();
+    String getMovieInfo();
 
     void saveInDb();
 

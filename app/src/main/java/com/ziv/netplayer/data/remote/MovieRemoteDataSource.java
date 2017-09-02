@@ -15,8 +15,8 @@ public class MovieRemoteDataSource implements MovieDataSource {
     }
 
     @Override
-    public void getMovieInfo() {
-
+    public String getMovieInfo() {
+        return null;
     }
 
     @Override

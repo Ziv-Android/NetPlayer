@@ -12,7 +12,7 @@ public interface HomeContract {
         void showLoading();
         void hideLoading();
 
-        void setText();
+        void showResult(String result);
     }
 
     interface Presenter extends BasePresenter {

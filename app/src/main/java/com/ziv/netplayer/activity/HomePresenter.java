@@ -19,11 +19,13 @@ public class HomePresenter implements HomeContract.Presenter {
 
     @Override
     public void start() {
-
+        getMovie();
     }
 
     @Override
     public void getMovie() {
+        mHomeView.showLoading();
 
+        mHomeView.showResult("");
     }
 }

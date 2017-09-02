@@ -1,9 +1,10 @@
-package com.ziv.netplayer.func;
+package com.ziv.netplayer.data.remote;
 
 import android.util.Log;
 
 import com.ziv.netplayer.bean.MovieEntity;
-import com.ziv.netplayer.service.MovieService;
+import com.ziv.netplayer.data.MovieDataSource;
+import com.ziv.netplayer.data.remote.service.MovieService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -15,8 +16,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by ziv on 2017/9/2.
  */
 
-public class OnlyRetrofit implements Common {
+public class OnlyRetrofit implements MovieDataSource {
     private String result;
+
+    @Override
+    public void getMovieList() {
+
+    }
+
     @Override
     public String getMovieInfo() {
         String baseUrl = "https://api.douban.com/v2/movie/";
@@ -31,7 +38,7 @@ public class OnlyRetrofit implements Common {
         call.enqueue(new Callback<MovieEntity>() {
             @Override
             public void onResponse(Call<MovieEntity> call, Response<MovieEntity> response) {
-                result =  response.body().toString();
+                result = response.body().toString();
                 Log.d("Ziv", "OnlyRetrofit onResponse = " + result);
             }
 
@@ -43,5 +50,15 @@ public class OnlyRetrofit implements Common {
         });
         Log.d("Ziv", "OnlyRetrofit MovieInfo = " + result);
         return result;
+    }
+
+    @Override
+    public void saveInDb() {
+
+    }
+
+    @Override
+    public void refresh() {
+
     }
 }

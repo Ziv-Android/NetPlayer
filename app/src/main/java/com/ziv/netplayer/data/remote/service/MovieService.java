@@ -1,4 +1,4 @@
-package com.ziv.netplayer.service;
+package com.ziv.netplayer.data.remote.service;
 
 import com.ziv.netplayer.bean.MovieEntity;
 

@@ -7,8 +7,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.ziv.netplayer.R;
-import com.ziv.netplayer.func.Common;
-import com.ziv.netplayer.func.OnlyRetrofit;
+import com.ziv.netplayer.data.MovieDataSource;
+import com.ziv.netplayer.data.remote.OnlyRetrofit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     public void onClick() {
         Log.e("ButterKnife", "onClick");
         // 网络请求数据
-        Common common = new OnlyRetrofit();
-        String movieInfo = common.getMovieInfo();
+        MovieDataSource dataSource = new OnlyRetrofit();
+        String movieInfo = dataSource.getMovieInfo();
         Log.d("Ziv", "MainActivity onClick MovieInfo = " + movieInfo);
         resultTv.setText(movieInfo);
     }
